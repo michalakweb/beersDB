@@ -19,7 +19,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-  }
+    fetch('v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
+    .then((resp) => resp.json())
+    .then(function(data) {
+      console.log(data);
+      })
+    }
 
   handleAdd = () => {
     this.props.dispatch(incrementAction());
