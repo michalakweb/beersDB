@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "22f5c7f7a648db4e51fc",
+    "revision": "464a9f15ec52988f10b0",
     "url": "/beersDB/static/css/main.54a6d339.chunk.css"
   },
   {
-    "revision": "22f5c7f7a648db4e51fc",
-    "url": "/beersDB/static/js/main.77fe9533.chunk.js"
+    "revision": "464a9f15ec52988f10b0",
+    "url": "/beersDB/static/js/main.8a83e6f3.chunk.js"
   },
   {
     "revision": "134d36e2c5508bddc1a3",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/beersDB/static/js/2.7b61e645.chunk.js"
   },
   {
-    "revision": "10486713be7ca1be0b8b1c68405dd11f",
+    "revision": "5566ee5e4c80353a6a15892c2aee9c08",
     "url": "/beersDB/index.html"
   }
 ];
