@@ -42,7 +42,6 @@ class App extends Component {
     // Scrolling back into the same list item,
     // the name of header is passed from the InvidualBeerPage Link component as a prop 
     if(this.props.location.state !== undefined) {
-      console.log(this.props.location.state)
       let text = this.props.location.state.oneBeerData;
       setTimeout(() => {
         for (const a of document.querySelectorAll("h4")) {
