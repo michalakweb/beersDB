@@ -9,13 +9,15 @@ import { createHashHistory } from 'history'
     
 //Components
 import App from './components/App';
+import Test from './components/Test';
 
 const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
 const jsx = (
         <Router history={hashHistory}>
             <Switch>
-                <Route path='/' component={App}/>
+                <Route exact path='/' component={App}/>
+                <Route exact path='/beer/:id' component={Test}/>
                 <Route component={() => (<div>404 Not found 1</div>)} />
             </Switch>
         </Router>

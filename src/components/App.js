@@ -10,6 +10,8 @@ class App extends Component {
     database: ''
   }
 
+  // After component mounts it fetches the database, which (upon success) updates
+  // the component state
   componentDidMount = () => {
     fetch('https://cors.io/?https://sandbox-api.brewerydb.com/v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
     .then((resp) => resp.json())
