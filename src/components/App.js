@@ -11,17 +11,30 @@ class App extends Component {
   }
 
   // After component mounts it fetches the database, which (upon success) updates
-  // the component state
+  // the component state and the LocalStorage
   componentDidMount = () => {
-    fetch('https://cors.io/?https://sandbox-api.brewerydb.com/v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
-    .then((resp) => resp.json())
-    .then(database => {
+    const myListJSON = localStorage.getItem('database');
+    if(!!myListJSON) {
+      const data = JSON.parse(myListJSON);
+      this.setState(() => ({
+        database: data
+      }))
+    } else {
+      fetch('https://cors.io/?https://sandbox-api.brewerydb.com/v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
+      .then((resp) => resp.json())
+      .then(database => {
         console.log(database);
 
         this.setState(() => ({
           database: database.data
         }))
+
+        const myJSON = JSON.stringify(database.data);
+        localStorage.setItem('database', myJSON);
       })
+    }
+
+    
     }
 
   render() {
