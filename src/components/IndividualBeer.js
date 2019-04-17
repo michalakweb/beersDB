@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import IndividualBeerDetails from './IndividualBeerDetails';
 import Navigation from './Navigation';
+import { Container } from 'react-bootstrap';
 
 class IndividualBeer extends React.Component {
     state = {
@@ -24,21 +25,23 @@ class IndividualBeer extends React.Component {
         return (
             <div>    
                 <Navigation />
-                {   // If the user reached this page from the list 
-                    // he will see the results instatly loaded via the Link props
+                <Container className='align-self-center'>
+                    {   // If the user reached this page from the list 
+                        // he will see the results instatly loaded via the Link props
                     this.props.location.state !== undefined && 
                     <IndividualBeerDetails oneBeerData={this.props.location.state.oneBeerData}/> 
                     
                     // if available: related glass data 
-                }
-                {   // If the user reached refreshed the page or went to it directly
-                    // the results will be fetched from the API
-                    // (LocalStorage could also be used to limit API calls) 
+                    }
+                    {   // If the user reached refreshed the page or went to it directly
+                        // the results will be fetched from the API
+                        // (LocalStorage could also be used to limit API calls) 
                     this.state.oneBeerData === 'Loading...' && 
                     this.props.location.state === undefined ? 
                     <p>Loading</p> : (this.props.location.state === undefined &&
                     <IndividualBeerDetails oneBeerData={this.state.oneBeerData}/>) 
-                }
+                    }
+                </Container>
                 <Link to='/'>Back</Link>
             </div>
         );

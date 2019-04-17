@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const noInfo = 'No information'
 
@@ -6,12 +7,16 @@ const noInfo = 'No information'
 // if information is not provided I still display it, so that the layout can be more uniformal
 const IndividualBeerDetails = ({oneBeerData: {name, abv, ibu, isOrganic, status, glass}}) => (
     <div>
-        <p>Name: {name ? name : noInfo}</p>
-        <p>Abv: {abv ? abv : noInfo}</p>
-        <p>Ibu: {ibu ? ibu : noInfo}</p>
-        <p>IsOrganic: {isOrganic ? isOrganic : noInfo}</p>
-        <p>Status: {status ? status : noInfo}</p>
-        <p>Glass: {glass ? glass.name : noInfo}</p>
+        <Card className='align-self-center'>
+            <Card.Body>
+            <Card.Title>{name ? name : 'Unknown Beer'}</Card.Title>
+            <Card.Text>Abv: {abv ? abv : noInfo}</Card.Text>
+            <Card.Text>Ibu: {ibu ? ibu : noInfo}</Card.Text>
+            <Card.Text>IsOrganic: {isOrganic ? isOrganic : noInfo}</Card.Text>
+            <Card.Text>Status: {status ? status : noInfo}</Card.Text>
+            <Card.Text>Glass: {glass ? glass.name : noInfo}</Card.Text>
+            </Card.Body>
+        </Card>
     </div>
 )
 
