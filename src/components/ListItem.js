@@ -6,7 +6,13 @@ const ListItem = (props) => (
         <p>Name: {props.database.name}</p>
         <p>Abv: {props.database.abv ? props.database.abv : 'Information not available'}</p>
         <p>Ibu: {props.database.ibu ? props.database.ibu : 'Information not available'}</p>
-        <Link to={`/beer/${props.database.id}`}>Details</Link>
+        <Link to={{
+            pathname: `/beer/${props.database.id}`,
+            state: {
+              oneBeerData: props.database
+            }
+          }}>Details
+        </Link>
     </div>
 )
 
