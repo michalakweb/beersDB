@@ -23,6 +23,7 @@ class App extends Component {
       this.setState(() => ({
         database: data
       }))
+      
     } else {
       fetch('https://cors.io/?https://sandbox-api.brewerydb.com/v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
       .then((resp) => resp.json())
@@ -38,6 +39,19 @@ class App extends Component {
       })
     }
 
+    // Scrolling back into the same list item,
+    // the name of header is passed from the InvidualBeerPage Link component as a prop 
+    if(this.props.location.state !== undefined) {
+      console.log(this.props.location.state)
+      let text = this.props.location.state.oneBeerData;
+      setTimeout(() => {
+        for (const a of document.querySelectorAll("h4")) {
+          if (a.textContent.includes(text)) {
+            a.scrollIntoView()
+          }
+        }
+      }, 1)
+    }
     
     }
 

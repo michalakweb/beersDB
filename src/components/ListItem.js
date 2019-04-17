@@ -19,10 +19,6 @@ const ListItem = (props) => (
               }}><Button variant="outline-primary">Details</Button>
               </Link>
           </Col>
-          
-        
-        
-        
         </Row>
     </div>
 )

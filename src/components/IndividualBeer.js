@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import IndividualBeerDetails from './IndividualBeerDetails';
 import Navigation from './Navigation';
-import { Container } from 'react-bootstrap';
+import { Container,  } from 'react-bootstrap';
 
 class IndividualBeer extends React.Component {
     state = {
@@ -42,7 +41,6 @@ class IndividualBeer extends React.Component {
                     <IndividualBeerDetails oneBeerData={this.state.oneBeerData}/>) 
                     }
                 </Container>
-                <Link to='/'>Back</Link>
             </div>
         );
     }
