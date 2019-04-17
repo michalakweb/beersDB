@@ -1,5 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const List = (props) => (
     <div>        
@@ -7,9 +8,16 @@ const List = (props) => (
         {   //showing a loading screen before the database loads
             props.database === '' && <p>Loading</p>
         }
+        <ListGroup className='my-3'>
         {   //once the database loads, each beer is shown as a separate component
-            props.database !== '' && props.database.map(beer => <ListItem key={beer.id} database={beer}/>)
+            props.database !== '' && 
+            props.database.map(beer => 
+                <ListGroupItem key={beer.id}>
+                    <ListItem key={beer.id} database={beer}/>
+                </ListGroupItem>)
         }
+        </ListGroup>
+        
     </div>
 )
 

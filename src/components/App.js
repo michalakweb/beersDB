@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 //CSS
 import 'bootstrap/dist/css/bootstrap.css';
-import {Container} from 'react-bootstrap';
+import '../styles/style.scss';
+
+// Components
 import List from './List';
+import Navigation from './Navigation';
+import {Container} from 'react-bootstrap';
 
 class App extends Component {
   state = {
@@ -23,7 +27,7 @@ class App extends Component {
       fetch('https://cors.io/?https://sandbox-api.brewerydb.com/v2/beers/?key=0e78f8bfabdcbd95f06487ec1c0976e6')
       .then((resp) => resp.json())
       .then(database => {
-        console.log(database);
+        console.log(database.data);
 
         this.setState(() => ({
           database: database.data
@@ -40,7 +44,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Container fluid>
+        <Navigation />
+        <Container>
           <List database={this.state.database}/>
         </Container>
       </div>

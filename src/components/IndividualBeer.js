@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import IndividualBeerDetails from './IndividualBeerDetails';
+import Navigation from './Navigation';
 
 class IndividualBeer extends React.Component {
     state = {
@@ -22,6 +23,7 @@ class IndividualBeer extends React.Component {
     render() {
         return (
             <div>    
+                <Navigation />
                 {   // If the user reached this page from the list 
                     // he will see the results instatly loaded via the Link props
                     this.props.location.state !== undefined && 
