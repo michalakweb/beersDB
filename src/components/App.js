@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   // After component mounts it fetches the database, which (upon success) updates
-  // the component state and the LocalStorage
+  // the component state and the LocalStorage (sessionStorage could also be used here)
   componentDidMount = () => {
     const myListJSON = localStorage.getItem('database');
     if(!!myListJSON) {
@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container fluid>
           <List database={this.state.database}/>
         </Container>
       </div>
