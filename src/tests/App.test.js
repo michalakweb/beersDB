@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-testing-library';
+import 'react-testing-library/cleanup-after-each';
+import 'jest-dom/extend-expect';
 import App from '../components/App'
 
 // App rendering (passing location object to bypass a Router-caused error)
@@ -17,5 +19,5 @@ it('App renders without crashing', () => {
 
 it('App renders the nav component that contains Beer DB text', () => {
     const { getByText } = render(<App location={location}/>);
-    expect(getByText('Beer DB')).toBeTruthy();
+    expect(getByText('Beer DB')).toBeInTheDocument();
 });

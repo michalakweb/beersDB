@@ -1,12 +1,13 @@
 import React from 'react';
 import IndividualBeerDetails from './IndividualBeerDetails';
 import Navigation from './Navigation';
-import { Container } from 'react-bootstrap';
+import { Container, Alert } from 'react-bootstrap';
 import Loading from './Loading';
 
 class IndividualBeer extends React.Component {
     state = {
-        oneBeerData: 'Loading...'
+        oneBeerData: 'Loading...',
+        error: undefined
     }
 
     componentDidMount = () => {
@@ -18,6 +19,11 @@ class IndividualBeer extends React.Component {
                 oneBeerData: database.data
                 }))
             })
+            .catch(error => {
+                this.setState(() => ({
+                  error: error
+                }))
+            });
         } 
     }
 
@@ -38,6 +44,12 @@ class IndividualBeer extends React.Component {
                     this.props.location.state === undefined ? 
                     <Loading/> : (this.props.location.state === undefined &&
                     <IndividualBeerDetails oneBeerData={this.state.oneBeerData}/>) 
+                    }
+                    {//Error rendering
+                        this.state.error && 
+                        <Alert className='mt-3' variant='danger'>
+                        Cannot connect to database. Check your connection or try again later.
+                        </Alert>
                     }
                 </Container>
             </div>
