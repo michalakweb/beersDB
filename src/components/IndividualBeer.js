@@ -18,7 +18,6 @@ class IndividualBeer extends React.Component {
                 this.setState(() => ({
                 oneBeerData: database.data
                 }))
-                console.log(this.state.oneBeerData)
             })
             .catch(error => {
                 this.setState(() => ({
