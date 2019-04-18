@@ -1,7 +1,8 @@
 import React from 'react';
 import IndividualBeerDetails from './IndividualBeerDetails';
 import Navigation from './Navigation';
-import { Container,  } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Loading from './Loading';
 
 class IndividualBeer extends React.Component {
     state = {
@@ -35,7 +36,7 @@ class IndividualBeer extends React.Component {
                         // (LocalStorage could also be used to limit API calls) 
                     this.state.oneBeerData === 'Loading...' && 
                     this.props.location.state === undefined ? 
-                    <p>Loading</p> : (this.props.location.state === undefined &&
+                    <Loading/> : (this.props.location.state === undefined &&
                     <IndividualBeerDetails oneBeerData={this.state.oneBeerData}/>) 
                     }
                 </Container>
