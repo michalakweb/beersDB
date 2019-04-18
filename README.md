@@ -1,7 +1,7 @@
 <img src="https://github.com/michalakweb/beersDB/blob/master/src/logo.svg" alt="Smiley face" height="60" width="60"> 
 
 # Beer DB
-> Sample beer database delivered to the front end by React
+> Sample beer database
 
 Working example: [https://michalakweb.github.io/beersDB/](https://michalakweb.github.io/beersDB/)
 
