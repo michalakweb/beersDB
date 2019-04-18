@@ -29,10 +29,8 @@ class IndividualBeer extends React.Component {
                         // he will see the results instatly loaded via the Link props
                     this.props.location.state !== undefined && 
                     <IndividualBeerDetails oneBeerData={this.props.location.state.oneBeerData}/> 
-                    
-                    // if available: related glass data 
                     }
-                    {   // If the user reached refreshed the page or went to it directly
+                    {   // If the user refreshed the page or went to it directly
                         // the results will be fetched from the API
                         // (LocalStorage could also be used to limit API calls) 
                     this.state.oneBeerData === 'Loading...' && 
