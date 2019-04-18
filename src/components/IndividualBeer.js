@@ -18,6 +18,7 @@ class IndividualBeer extends React.Component {
                 this.setState(() => ({
                 oneBeerData: database.data
                 }))
+                console.log(this.state.oneBeerData)
             })
             .catch(error => {
                 this.setState(() => ({
@@ -30,6 +31,9 @@ class IndividualBeer extends React.Component {
     render() {
         return (
             <div>    
+                {
+                    
+                }
                 <Navigation />
                 <Container className='align-self-center'>
                     {   // If the user reached this page from the list 

@@ -15,9 +15,7 @@ it('App renders without crashing', () => {
     ReactDOM.render(<App location={location}/>, div);
 });
 
-// 
-
-it('App renders the nav component that contains Beer DB text', () => {
+it('App renders with the nav component that contains Beer DB text', () => {
     const { getByText } = render(<App location={location}/>);
     expect(getByText('Beer DB')).toBeInTheDocument();
 });
